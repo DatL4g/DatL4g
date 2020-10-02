@@ -1,19 +1,3 @@
-<!--
-**DATL4G/DatL4g** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- 
--->
-
-
 <p align="center">
   <br>
   <br>
@@ -26,7 +10,7 @@ Here are some ideas to get you started:
 <a href="https://www.youtube.com/channel/UCvLoSNSC2KUvXAgLqd-bzyQ" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg" alt="geshii" height="20" width="20" /></a>
 </p>
   <samp><br>- 🔭 I’m currently working on <a href="https://github.com/DATL4G/OpenFE-Android">OpenFE-Android</a> and some other Android and Angular projects. Full time student & opensourcerer
-<br>- 🎮 I'm most of the time programming or playing some games <a href="https://steamcommunity.com/id/datl4g/">(here's my steam page)</a>. I may also be cooking or tinkering.
+<br>- 🎮 I'm most of the time programming or playing some games <a href="https://steamcommunity.com/id/datl4g/">(here's my steam page)</a>.
 <br>- 👯 I’m looking to collaborate on open-source projects (all sizes of projects)
 <br>- 💬 Ask me about anything :3
 <br>- 📫 How to reach me: datlag.developer@gmail.com
