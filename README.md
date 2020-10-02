@@ -1,7 +1,7 @@
 <div style="text-align: center !important">
     <p align="center" style="text-align: center !important">
       <a href="https://github.com/DatL4g">
-      <img align="center" alt="DatLag" style="width: 50px; height: 50px; border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/46448715?s=50&v=4"></a>
+      <img align="center" alt="DatLag" style="width: 100px; height: 100px; border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/46448715?s=100&v=4"></a>
       <br>
       <br>
       Hi there ! I'm <a href="https://github.com/DatL4g">DatLag</a>.
