@@ -11,11 +11,12 @@
       <br>
       #typescript, #kotlin, #web, #android
       <br>
-      <a href="https://twitter.com/DatL4g" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="DatLag" height="20" width="20" style="height: 20px; width: 20px;"></a>
-      <a href="https://datlag-page.web.app/" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/webstorm.svg" alt="DatLag" height="20" width="20" style="height: 20px; width: 20px;"></a>
-      <a href="https://www.youtube.com/channel/UCvLoSNSC2KUvXAgLqd-bzyQ" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg" alt="DatLag" height="20" width="20" style="height: 20px; width: 20px;"></a>
+      <a href="https://twitter.com/DatL4g" target="_blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="DatLag" height="20" width="20" style="height: 20px; width: 20px;"></a>
+      <a href="https://datlag-page.web.app/" target="_blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/webstorm.svg" alt="DatLag" height="20" width="20" style="height: 20px; width: 20px;"></a>
+      <a href="https://www.youtube.com/channel/UCvLoSNSC2KUvXAgLqd-bzyQ" target="_blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg" alt="DatLag" height="20" width="20" style="height: 20px; width: 20px;"></a>
       <br>
       <br>
+      <a href="https://github.com/DatL4g"><img src="https://komarev.com/ghpvc/?username=DatL4g&color=db3236" /></a>
     </p>
 </div>
 <p>
