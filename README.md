@@ -46,10 +46,11 @@
 - ElectronJS because it is a great framework using the NodeJS runtime for running cross-platform applications.
 <br>
 <br>
-<img align="center" src="https://github-readme-stats.vercel.app/api?username=DatL4g&theme=dracula&show_icons=true&custom_title=DatLag%27s%20GitHub%20stats">
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=DatL4g&theme=dracula&show_icons=true&custom_title=DatLag%27s%20GitHub%20stats" />
 <br>
 <br>
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DatL4g&layout=compact&theme=dracula">
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DatL4g&layout=compact&theme=dracula" />
 <br>
 <br>
+<img align="center" src="https://spotify-recently-played-readme.vercel.app/api?user=a1dhg1g3pbolb06nbsxiia72w" />
 </p>
