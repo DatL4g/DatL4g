@@ -21,7 +21,7 @@
 </div>
 <p>
   <br>
-- 🔭 I’m currently working on <a href="https://github.com/DATL4G/OpenFE-Android">OpenFE-Android</a> and some other Android and Angular projects. Full time student & opensourcerer
+- 🔭 I’m currently working on <a href="https://github.com/DATL4G/BurningSeries-Android">BurningSeries-Android</a> and some other Android projects.
 <br>
 - 🎮 I'm most of the time programming or playing some games <a href="https://steamcommunity.com/id/datl4g/">(here's my steam page)</a>.
 <br>
@@ -46,7 +46,7 @@
 - ElectronJS because it is a great framework using the NodeJS runtime for running cross-platform applications.
 <br>
 <br>
-<img align="center" src="https://github-readme-stats.vercel.app/api?username=DatL4g&theme=dracula&show_icons=true&custom_title=DatLag%27s%20GitHub%20stats" />
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=DatL4g&theme=dracula&show_icons=true&include_all_commits=true&custom_title=DatLag%27s%20GitHub%20stats" />
 <br>
 <br>
 <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=DatL4g&layout=compact&theme=dracula" />
