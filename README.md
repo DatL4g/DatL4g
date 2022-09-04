@@ -44,14 +44,13 @@ Especially Kotlin projects of any size.
 
 Flower simplifies networking and database caching on Android.
 
-- Currently implementing multiplatform support
-    - Almost done (v3.0)
+- Implemented multiplatform support
 
 ### [Ktorfit](https://github.com/Foso/Ktorfit)
 
 HTTP client / Kotlin Symbol Processor for Kotlin Multiplatform (Js, Jvm, Android, Native, iOS) using KSP and Ktor clients inspired by Retrofit.
 
-- Recently added core functionality
+- Added core functionality
     - ```suspend``` function support
     - Added Builder
 
