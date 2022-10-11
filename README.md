@@ -68,3 +68,5 @@ After working at my "real job", I'm either playing some games [(Steam Page)](htt
 ![](https://github-readme-stats.vercel.app/api?username=DatL4g&theme=dracula&show_icons=true&include_all_commits=true&custom_title=DatLag%27s%20GitHub%20stats)
 
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=DatL4g&layout=compact&theme=dracula)
+
+[![@datlag's Holopin board](https://holopin.io/api/user/board?user=datlag)](https://holopin.io/@datlag)
