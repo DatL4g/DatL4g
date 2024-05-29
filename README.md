@@ -10,7 +10,7 @@
 
 ## 👦🏻 Who am I?
 
-My name is Jeff (aka **DatLag**) and I'm currently 21 years old.
+My name is Jeff (aka **DatLag**) and I'm currently 22 years old.
 
 As a qualified Software Developer, I am working in a small company in Germany 🇩🇪.
 
@@ -22,9 +22,11 @@ I'm trying to improve our life by:
 
 ## 🖥 Working on
 
-### [DXVKoTool](https://github.com/DATL4G/DXVKoTool)
+### [AniFlow](https://github.com/DatL4g/AniFlow)
 
-The DXVKoTool extracts DXVK caches of games automatically and can update them with caches provided in this [repository](https://github.com/begin-theadventure/dxvk-caches/tree/main/dxvk-caches)
+<a href="https://play.google.com/store/apps/details?id=dev.datlag.aniflow" target="_blank">
+<img src="https://play.google.com/intl/en_gb/badges/static/images/badges/en_badge_web_generic.png" width=140 />
+</a>
 
 ### [BurningSeries-Android](https://github.com/DATL4G/BurningSeries-Android)
 
@@ -53,15 +55,6 @@ HTTP client / Kotlin Symbol Processor for Kotlin Multiplatform (Js, Jvm, Android
 - Added core functionality
     - ```suspend``` function support
     - Added Builder
-
-## 🎮 What am I doing in my free time?
-
-Working.
-I'm almost working all time (except when I'm sleeping 😄).
-
-Alright jokes aside (kind of).
-
-After working at my "real job", I'm either playing some games [(Steam Page)](https://steamcommunity.com/id/datlag_uwu/) or working on some project(s) and of course watching Anime 👯
 
 ## 📈 Stats
 
