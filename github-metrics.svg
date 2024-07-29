@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="519" class="columns">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="833" class="columns">
     <defs>
         <style/>
     </defs>
-    <style>@keyframes animation-gauge{0%{stroke-dasharray:0 329}}@keyframes animation-rainbow{0%,to{color:#7f00ff;fill:#7f00ff}14%{color:#a933ff;fill:#a933ff}29%{color:#007fff;fill:#007fff}43%{color:#00ff7f;fill:#00ff7f}57%{color:#ff0;fill:#ff0}71%{color:#ff7f00;fill:#ff7f00}86%{color:red;fill:red}}svg{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:14px;color:#777}svg.columns .items-wrapper{column-count:2;column-gap:10px}svg.columns .items-wrapper&gt;*{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid-column}@media (max-width:850px){svg.columns .items-wrapper{column-count:1}}h1,h2,h3{margin:8px 0 2px;padding:0;color:#0366d6}h1{font-size:20px;font-weight:700}h2,h3{font-weight:400}h1 svg,h2 svg,h3 svg{fill:currentColor}h2{font-size:16px}h3{font-size:14px}section&gt;.field{margin-left:5px;margin-right:5px}.field{display:flex;align-items:center;margin-bottom:2px;white-space:nowrap}.field svg{margin:0 8px;fill:#959da5;flex-shrink:0}.field.error{color:#cb2431}.field.error svg{fill:#cb2431}.row{display:flex;flex-wrap:wrap}.row section{flex:1 1 0}.column,footer{display:flex;flex-direction:column}.column{align-items:center}.center{justify-content:center}.horizontal-wrap{flex-wrap:wrap}.no-wrap{white-space:nowrap}#metrics-end,.fill-width{width:100%}.avatar{border-radius:50%;margin:0 6px}.organization.avatar{border-radius:15%}.organization.contributions{margin:0 8px;flex-wrap:wrap}.calendar.field{margin:4px 0 4px 7px}.calendar .day{outline:1px solid rgba(27,31,35,.04);outline-offset:-1px}svg.bar{margin:4px 0}.field.language{margin:0 8px;flex-grow:0}footer{margin-top:8px;font-size:10px;font-style:italic;color:#666;text-align:right;justify-content:flex-end;padding:0 4px}svg.calendar{margin-left:13px;margin-top:4px}.added{color:#3fb950}.people{padding:0 10px}.people .avatar{margin:0 2px}.introduction{white-space:normal;margin:0 13px 2px}:root{--color-calendar-graph-day-bg:#ebedf0;--color-calendar-graph-day-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-bg:#9be9a8;--color-calendar-graph-day-L2-bg:#40c463;--color-calendar-graph-day-L3-bg:#30a14e;--color-calendar-graph-day-L4-bg:#216e39;--color-calendar-halloween-graph-day-L1-bg:#ffee4a;--color-calendar-halloween-graph-day-L2-bg:#ffc501;--color-calendar-halloween-graph-day-L3-bg:#fe9600;--color-calendar-halloween-graph-day-L4-bg:#03001c;--color-calendar-winter-graph-day-L1-bg:#0a3069;--color-calendar-winter-graph-day-L2-bg:#0969da;--color-calendar-winter-graph-day-L3-bg:#54aeff;--color-calendar-winter-graph-day-L4-bg:#b6e3ff;--color-calendar-graph-day-L4-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L3-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L2-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-border:rgba(27,31,35,0.06)}</style>
+    <style>@keyframes animation-gauge{0%{stroke-dasharray:0 329}}@keyframes animation-rainbow{0%,to{color:#7f00ff;fill:#7f00ff}14%{color:#a933ff;fill:#a933ff}29%{color:#007fff;fill:#007fff}43%{color:#00ff7f;fill:#00ff7f}57%{color:#ff0;fill:#ff0}71%{color:#ff7f00;fill:#ff7f00}86%{color:red;fill:red}}svg{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:14px;color:#777}svg.columns .items-wrapper{column-count:2;column-gap:10px}svg.columns .items-wrapper&gt;*{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid-column}@media (max-width:850px){svg.columns .items-wrapper{column-count:1}}h1,h2,h3{margin:8px 0 2px;padding:0;color:#0366d6}h1{font-size:20px;font-weight:700}h2,h3{font-weight:400}h1 svg,h2 svg,h3 svg{fill:currentColor}h2{font-size:16px}h3{font-size:14px}section&gt;.field{margin-left:5px;margin-right:5px}.field{display:flex;align-items:center;margin-bottom:2px;white-space:nowrap}.field svg{margin:0 8px;fill:#959da5;flex-shrink:0}.row{display:flex;flex-wrap:wrap}.row section{flex:1 1 0}.column{display:flex;flex-direction:column;align-items:center}.center{justify-content:center}.horizontal-wrap{flex-wrap:wrap}.no-wrap{white-space:nowrap}#metrics-end,.fill-width{width:100%}.avatar{border-radius:50%;margin:0 6px}.calendar.field{margin:4px 0 4px 7px}.calendar .day{outline:1px solid rgba(27,31,35,.04);outline-offset:-1px}svg.bar{margin:4px 0}.field.language{margin:0 8px;flex-grow:0}.repository,footer{display:flex;flex-direction:column}footer{margin-top:8px;font-size:10px;font-style:italic;color:#666;text-align:right;justify-content:flex-end;padding:0 4px}.repository{width:100%;margin:6px 0}svg.calendar{margin-left:13px;margin-top:4px}.added{color:#3fb950}.people{padding:0 10px}.people .avatar{margin:0 2px}.introduction,.sponsors{white-space:normal;margin:0 13px 2px}.sponsors.goal,code,span.code{padding:6px 8px;border-radius:5px;background-color:#7777771f}.sponsors .goal-text{display:flex;justify-content:space-between;font-style:italic;font-size:12px;margin-bottom:4px}.sponsors .avatar{margin:2px}.markdown b,.markdown i{display:inline-block;width:97%}.markdown p{margin:8px 0}.markdown a{color:#58a6ff;text-decoration:none}code,span.code{padding:1px 5px;font-size:80%;border-radius:6px;color:#777;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace}code{display:inline-block}span.code{margin:0 4px -3px}:root{--color-calendar-graph-day-bg:#ebedf0;--color-calendar-graph-day-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-bg:#9be9a8;--color-calendar-graph-day-L2-bg:#40c463;--color-calendar-graph-day-L3-bg:#30a14e;--color-calendar-graph-day-L4-bg:#216e39;--color-calendar-halloween-graph-day-L1-bg:#ffee4a;--color-calendar-halloween-graph-day-L2-bg:#ffc501;--color-calendar-halloween-graph-day-L3-bg:#fe9600;--color-calendar-halloween-graph-day-L4-bg:#03001c;--color-calendar-winter-graph-day-L1-bg:#0a3069;--color-calendar-winter-graph-day-L2-bg:#0969da;--color-calendar-winter-graph-day-L3-bg:#54aeff;--color-calendar-winter-graph-day-L4-bg:#b6e3ff;--color-calendar-graph-day-L4-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L3-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L2-border:rgba(27,31,35,0.06);--color-calendar-graph-day-L1-border:rgba(27,31,35,0.06)}</style>
     <style/>
     <foreignObject x="0" y="0" width="100%" height="100%">
         <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink" class="items-wrapper">
@@ -122,7 +122,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M1.5 14.25c0 .138.112.25.25.25H4v-1.25a.75.75 0 01.75-.75h2.5a.75.75 0 01.75.75v1.25h2.25a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25h-8.5a.25.25 0 00-.25.25v12.5zM1.75 16A1.75 1.75 0 010 14.25V1.75C0 .784.784 0 1.75 0h8.5C11.216 0 12 .784 12 1.75v12.5c0 .085-.006.168-.018.25h2.268a.25.25 0 00.25-.25V8.285a.25.25 0 00-.111-.208l-1.055-.703a.75.75 0 11.832-1.248l1.055.703c.487.325.779.871.779 1.456v5.965A1.75 1.75 0 0114.25 16h-3.5a.75.75 0 01-.197-.026c-.099.017-.2.026-.303.026h-3a.75.75 0 01-.75-.75V14h-1v1.25a.75.75 0 01-.75.75h-3zM3 3.75A.75.75 0 013.75 3h.5a.75.75 0 010 1.5h-.5A.75.75 0 013 3.75zM3.75 6a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM3 9.75A.75.75 0 013.75 9h.5a.75.75 0 010 1.5h-.5A.75.75 0 013 9.75zM7.75 9a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM7 6.75A.75.75 0 017.75 6h.5a.75.75 0 010 1.5h-.5A.75.75 0 017 6.75zM7.75 3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5z"/>
                             </svg>
-                            Member of 1 organization
+                            Member of 2 organizations
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -190,7 +190,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                         <path fill-rule="evenodd" d="M2.75 1.5a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V4.664a.25.25 0 00-.073-.177l-2.914-2.914a.25.25 0 00-.177-.073H2.75zM1 1.75C1 .784 1.784 0 2.75 0h7.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v9.586A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V1.75zm7 1.5a.75.75 0 01.75.75v1.5h1.5a.75.75 0 010 1.5h-1.5v1.5a.75.75 0 01-1.5 0V7h-1.5a.75.75 0 010-1.5h1.5V4A.75.75 0 018 3.25zm-3 8a.75.75 0 01.75-.75h4.5a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75z"/>
                                     </svg>
-                                    626k added, 481k removed
+                                    266k added, 131k removed
                                 </div>
                             </section>
                             <section>
@@ -1388,21 +1388,67 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                         <path fill-rule="evenodd" d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25zm0 0l.345.666a.752.752 0 01-.69 0L8 14.25z"/>
                     </svg>
+                    Sponsor Me!
                 </h2>
-                <div class="row fill-width">
-                    <section>
-                        <div class="field error">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path fill-rule="evenodd" d="M2.343 13.657A8 8 0 1113.657 2.343 8 8 0 012.343 13.657zM6.03 4.97a.75.75 0 00-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 101.06 1.06L8 9.06l1.97 1.97a.75.75 0 101.06-1.06L9.06 8l1.97-1.97a.75.75 0 10-1.06-1.06L8 6.94 6.03 4.97z"/>
+                <div class="fill-width">
+                    <section class="sponsors goal">
+                        <div class="markdown">Reaching 20 sponsors with an average of 5$, I could collect enough money in a year to buy a MacBook, so I can improve my apps and libraries even further to support iOS/macOS targets.</div>
+                        <div class="center horizontal-wrap ">
+                            <svg class="bar" xmlns="http://www.w3.org/2000/svg" width="440" height="8">
+                                <mask id="project-bar">
+                                    <rect x="0" y="0" width="440" height="8" fill="white" rx="5"/>
+                                </mask>
+                                <rect mask="url(#project-bar)" x="0" y="0" width="22" height="8" fill="#ec6cb9"/>
+                                <rect mask="url(#project-bar)" x="22" y="0" width="418" height="8" fill="#d1d5da"/>
                             </svg>
-                            Unexpected error
+                        </div>
+                        <div class="goal-text">
+                            <span>1 sponsor is funding DatL4g's work</span>
+                            <span>20 monthly sponsors</span>
+                        </div>
+                        <div class="row">
+                            <img class="avatar " src="data:image/png;base64,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" width="28" height="28" alt="" />
+                        </div>
+                    </section>
+                </div>
+                <div class="row fill-width">
+                    <section class="sponsors">
+                        <div class="markdown">
+                            <h1>Hello World! 👋🏻</h1>
+                            <p>I'm Jeff from Germany 🇩🇪 and I am a qualified Software Developer</p>
+                            <h2>What I'm working on</h2>
+                            <p>Take a look at my <a href="https://github.com/DATL4G">profile page</a> or just view my repository list :)</p>
+                            <p>But for a short overview you can look at my featured work below, which I either created or mainly contributed to.</p>
+                            <h2>Why Sponsor Me?</h2>
+                            <p>Well you should sponsor me if you use and like my projects, because that's what keeps them going.</p>
+                            <p>With income from GitHub sponsors, I can not only spend more time maintaining my existing projects, but also start more projects and finish them faster.
+Giving a sponsor also validates the work I'm doing and shows me that people believe in the code I produce 
+and with this response I would also like to attract more people in Open Source.</p>
+                            <h2>Why is OpenSource important to me?</h2>
+                            <p>
+                                As a passionate 🐧
+                                <a href="https://github.com/torvalds/linux">Linux</a>
+                                user, there is no getting around Open Source.
+Wether it's small improvements for the
+                                <a href="https://github.com/GNOME">GNOME</a>
+                                desktop (🖥
+                                <a href="https://github.com/micheleg/dash-to-dock">Dash to Dock</a>
+                                ) or big / known / important projects in the
+                                <a href="https://github.com/Debian">Debian</a>
+                                environment (📁
+                                <a href="https://github.com/GNOME/nautilus">Nautilus</a>
+                                ).
+In the Linux world, Open Source Software is not just an attitude but also a principle that everyone should actually follow.
+After all, we as users are also responsible for which products will be successful and, above all, which data is collected from us.
+                            </p>
+                            <h3>Thank you for your support! ❤️</h3>
                         </div>
                     </section>
                 </div>
             </section>
             <footer>
                 <span>These metrics do not include all private contributions</span>
-                <span>Last updated 29 Jul 2024, 19:08:32 (timezone Europe/Berlin) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 29 Jul 2024, 19:11:13 (timezone Europe/Berlin) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
