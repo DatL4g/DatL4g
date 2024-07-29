@@ -28,7 +28,7 @@ jobs:
 
           # Options
           user: DatL4g
-          template: classic
+          template: repository
           base: header, activity, community, repositories, metadata
           config_display: regular
           config_octicon: yes
