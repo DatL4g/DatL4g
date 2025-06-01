@@ -11,6 +11,7 @@ group = artifact
 
 kotlin {
     wasmJs {
+        outputModuleName.set("composeApp.js")
         browser()
         binaries.executable()
     }
