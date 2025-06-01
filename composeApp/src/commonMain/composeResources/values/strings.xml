@@ -1,0 +1,7 @@
+<resources>
+    <string name="mimasu">Mimasu</string>
+    <string name="mimasu_description">Discover, track, and bookmark your favorite movies and TV shows.</string>
+    <string name="github">GitHub</string>
+    <string name="github_repository">GitHub Repository</string>
+    <string name="google_play">Google Play</string>
+</resources>
