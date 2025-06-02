@@ -1,9 +1,10 @@
 [versions]
 compose = "1.8.1"
 kotlin = "2.1.21"
+tooling = "1.7.0"
 
 [libraries]
-
+tooling-compose = { group = "dev.datlag.tooling", name = "tooling-compose", version.ref = "tooling" }
 
 [plugins]
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }

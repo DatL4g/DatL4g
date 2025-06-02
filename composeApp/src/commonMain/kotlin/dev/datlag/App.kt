@@ -17,9 +17,11 @@ import dev.datlag.composeapp.generated.resources.google_play
 import dev.datlag.composeapp.generated.resources.mimasu
 import dev.datlag.composeapp.generated.resources.mimasu_description
 import dev.datlag.other.Constants
+import dev.datlag.tooling.compose.toTypography
 import dev.datlag.ui.custom.GitHubButton
 import dev.datlag.ui.custom.GoogleButton
 import dev.datlag.ui.theme.Colors
+import dev.datlag.ui.theme.Font
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -34,7 +36,8 @@ fun App(
         LocalDarkMode provides systemDarkTheme
     ) {
         MaterialTheme(
-            colorScheme = if (systemDarkTheme) Colors.getDarkScheme() else Colors.getLightScheme()
+            colorScheme = if (systemDarkTheme) Colors.getDarkScheme() else Colors.getLightScheme(),
+            typography = Font.ManRope().toTypography(),
         ) {
             Surface(
                 modifier = Modifier.fillMaxSize(),
@@ -90,7 +93,7 @@ fun App(
                                 )
                                 GoogleButton(
                                     onClick = {
-                                        uriHandler.openUri(Constants.MIMASU_GITHUB_REPO)
+                                        uriHandler.openUri(Constants.MIMASU_GOOGLE_PLAY)
                                     },
                                     modifier = Modifier.weight(1F),
                                     text = stringResource(Res.string.google_play)
