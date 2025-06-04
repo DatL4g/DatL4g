@@ -61,7 +61,8 @@ fun GoogleButton(
         colors = ButtonDefaults.buttonColors(
             containerColor = containerColor,
             contentColor = contentColor
-        )
+        ),
+        border = border
     ) {
         Icon(
             modifier = Modifier.size(iconSize),
@@ -69,12 +70,11 @@ fun GoogleButton(
             contentDescription = null,
             tint = Color.Unspecified
         )
-        Spacer(modifier = Modifier.defaultMinSize(minWidth = ButtonDefaults.IconSpacing).weight(1F))
+        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
         Text(
             text = text,
             maxLines = 1,
             fontWeight = FontWeight.SemiBold
         )
-        Spacer(modifier = Modifier.weight(1F))
     }
 }

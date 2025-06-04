@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.multiplatform)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
+    alias(libs.plugins.atomicfu)
 }
 
 val artifact = "dev.datlag"
@@ -23,8 +24,10 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(compose.materialIconsExtended)
 
             implementation(libs.tooling.compose)
+            implementation(libs.fonticons)
         }
 
         commonTest.dependencies {

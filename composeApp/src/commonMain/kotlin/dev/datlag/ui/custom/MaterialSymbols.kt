@@ -1,5 +1,13 @@
 package dev.datlag.ui.custom
 
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Info
+import androidx.compose.material.icons.rounded.Lightbulb
+import androidx.compose.material3.Icon
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.produceState
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.SolidColor
@@ -7,12 +15,37 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.font.FontVariation
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import dev.datlag.composeapp.generated.resources.MaterialSymbolsRounded
+import dev.datlag.composeapp.generated.resources.Res
+import dev.datlag.tooling.Platform
+import dev.datlag.tooling.compose.platform.localContentColor
+import dev.datlag.tooling.compose.withIOContext
+import dev.tclement.fonticons.ExperimentalFontIconsApi
+import dev.tclement.fonticons.FontIcon
+import dev.tclement.fonticons.IconFont
+import dev.tclement.fonticons.VariableIconFont
+import dev.tclement.fonticons.createVariableIconFont
+import kotlinx.atomicfu.atomic
+import org.jetbrains.compose.resources.FontResource
+import org.jetbrains.compose.resources.getSystemResourceEnvironment
 
 data object MaterialSymbols {
 
+    const val LIGHTBULB = "lightbulb"
+    const val INFO = "info"
+
     private var _GoogleGLogo: ImageVector? = null
     private var _Github: ImageVector? = null
+
+    private const val DEFAULT_GRADE = 24
+    private const val DEFAULT_OPSZ = 24F
+
+    private val defaultNonFilledFont = atomic<IconFont?>(null)
+    private val defaultFilledFont = atomic<IconFont?>(null)
 
     val GoogleGLogo: ImageVector
         get() {
@@ -182,5 +215,119 @@ data object MaterialSymbols {
                 _Github = it
             }
         }
+
+    @Composable
+    operator fun invoke(
+        name: String,
+        contentDescription: String?,
+        modifier: Modifier = Modifier,
+        tint: Color = Platform.localContentColor(),
+        filled: Boolean = false,
+        fallback: ImageVector? = fallbackFromName(name)
+    ) {
+        val font = rememberAsyncFont(
+            fill = if (filled) {
+                1F
+            } else {
+                0F
+            }
+        )
+
+        if (font == null) {
+            if (fallback != null) {
+                Icon(
+                    imageVector = fallback,
+                    contentDescription = contentDescription,
+                    modifier = modifier,
+                    tint = tint
+                )
+            } else {
+                Spacer(modifier = modifier)
+            }
+        } else {
+            FontIcon(
+                iconName = name,
+                contentDescription = contentDescription,
+                modifier = modifier,
+                tint = tint,
+                iconFont = font
+            )
+        }
+    }
+
+    private fun fallbackFromName(name: String): ImageVector? = when {
+        name.equals(LIGHTBULB, ignoreCase = true) -> Icons.Rounded.Lightbulb
+        name.equals(INFO, ignoreCase = true) -> Icons.Rounded.Info
+        else -> null
+    }
+
+    @OptIn(ExperimentalFontIconsApi::class)
+    @Composable
+    fun asyncVariableFont(
+        fontResource: FontResource,
+        weights: Array<FontWeight>,
+        fontVariationSettings: FontVariation.Settings = FontVariation.Settings(),
+        fontFeatureSettings: String? = null
+    ): VariableIconFont? {
+        val density = LocalDensity.current
+
+        return produceState<VariableIconFont?>(initialValue = null, key1 = fontResource) {
+            value = withIOContext {
+                createVariableIconFont(
+                    fontResource = fontResource,
+                    weights = weights,
+                    fontVariationSettings = fontVariationSettings,
+                    fontFeatureSettings = fontFeatureSettings,
+                    resourceEnvironment = getSystemResourceEnvironment(),
+                    density = density
+                )
+            }
+        }.value
+    }
+
+    @Composable
+    fun rememberAsyncFont(
+        grade: Int = DEFAULT_GRADE,
+        fill: Float = 0F,
+        manualOpsz: Boolean = false,
+        opsz: Float = DEFAULT_OPSZ
+    ): IconFont? {
+
+        @Composable
+        fun create() = asyncVariableFont(
+            fontResource = Res.font.MaterialSymbolsRounded,
+            weights = arrayOf(
+                FontWeight.W100,
+                FontWeight.W200,
+                FontWeight.W300,
+                FontWeight.W400,
+                FontWeight.W500,
+                FontWeight.W600,
+                FontWeight.W700,
+                FontWeight.W800,
+                FontWeight.W900,
+            ),
+            fontVariationSettings = FontVariation.Settings(*buildList {
+                add(FontVariation.grade(grade))
+                add(FontVariation.Setting("FILL", fill))
+                if (manualOpsz) {
+                    add(FontVariation.Setting("opsz", opsz))
+                }
+            }.toTypedArray())
+        )
+
+        if (grade == DEFAULT_GRADE && opsz == DEFAULT_OPSZ) {
+            when {
+                fill <= 0F -> return defaultNonFilledFont.value ?: create().also {
+                    defaultNonFilledFont.compareAndSet(null, it)
+                }
+                fill >= 1F -> return defaultFilledFont.value ?: create().also {
+                    defaultFilledFont.compareAndSet(null, it)
+                }
+            }
+        }
+
+        return create()
+    }
 
 }

@@ -1,12 +1,16 @@
 [versions]
+atomicfu = "0.27.0"
 compose = "1.8.1"
+fonticons = "2.1.1"
 kotlin = "2.1.21"
 tooling = "1.7.0"
 
 [libraries]
+fonticons = { group = "dev.tclement.fonticons", name = "core", version.ref = "fonticons" }
 tooling-compose = { group = "dev.datlag.tooling", name = "tooling-compose", version.ref = "tooling" }
 
 [plugins]
+atomicfu = { id = "org.jetbrains.kotlinx.atomicfu", version.ref = "atomicfu" }
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

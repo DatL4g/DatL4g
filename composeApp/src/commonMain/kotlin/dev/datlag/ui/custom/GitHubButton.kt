@@ -66,12 +66,11 @@ fun GitHubButton(
             imageVector = MaterialSymbols.Github,
             contentDescription = null
         )
-        Spacer(modifier = Modifier.defaultMinSize(minWidth = ButtonDefaults.IconSpacing).weight(1F))
+        Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
         Text(
             text = text,
             maxLines = 1,
             fontWeight = FontWeight.SemiBold
         )
-        Spacer(modifier = Modifier.weight(1F))
     }
 }
