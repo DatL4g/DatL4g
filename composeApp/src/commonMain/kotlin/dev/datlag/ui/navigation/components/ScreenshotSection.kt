@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import dev.datlag.common.hoverTiltEffect
 import dev.datlag.composeapp.generated.resources.Res
 import dev.datlag.composeapp.generated.resources.mimasu_1
 import dev.datlag.composeapp.generated.resources.mimasu_2
@@ -36,6 +37,7 @@ fun ScreenshotSection(
                 modifier = Modifier
                     .width(350.dp)
                     .height(720.dp)
+                    .hoverTiltEffect()
                     .shadow(
                         elevation = 8.dp,
                         shape = Platform.shapes().medium,
@@ -52,6 +54,7 @@ fun ScreenshotSection(
                 modifier = Modifier
                     .width(350.dp)
                     .height(720.dp)
+                    .hoverTiltEffect()
                     .shadow(
                         elevation = 8.dp,
                         shape = Platform.shapes().medium,
@@ -68,6 +71,7 @@ fun ScreenshotSection(
                 modifier = Modifier
                     .width(350.dp)
                     .height(720.dp)
+                    .hoverTiltEffect()
                     .shadow(
                         elevation = 8.dp,
                         shape = Platform.shapes().medium,

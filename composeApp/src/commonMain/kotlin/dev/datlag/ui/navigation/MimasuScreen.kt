@@ -6,6 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Lightbulb
+import androidx.compose.material.icons.outlined.Lightbulb
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -13,6 +16,7 @@ import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -21,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.datlag.LocalDarkMode
 import dev.datlag.composeapp.generated.resources.Res
 import dev.datlag.composeapp.generated.resources.cookies_usage
 import dev.datlag.composeapp.generated.resources.github_repository
@@ -33,6 +38,7 @@ import dev.datlag.tooling.Platform
 import dev.datlag.tooling.compose.platform.typography
 import dev.datlag.ui.custom.GitHubButton
 import dev.datlag.ui.custom.GoogleButton
+import dev.datlag.ui.custom.MaterialSymbols
 import dev.datlag.ui.navigation.components.AboutSection
 import dev.datlag.ui.navigation.components.ScreenshotSection
 import org.jetbrains.compose.resources.stringResource
@@ -40,7 +46,8 @@ import org.jetbrains.compose.resources.stringResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MimasuScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    triggerTheme: () -> Unit
 ) {
     val snackbarHostState = remember { SnackbarHostState() }
     val cookiesText = stringResource(Res.string.cookies_usage)
@@ -54,6 +61,22 @@ fun MimasuScreen(
                     Text(text = stringResource(Res.string.mimasu))
                 },
                 actions = {
+                    IconButton(
+                        onClick = triggerTheme
+                    ) {
+                        val enabled = !LocalDarkMode.current
+
+                        MaterialSymbols(
+                            name = MaterialSymbols.LIGHTBULB,
+                            contentDescription = null,
+                            filled = enabled,
+                            fallback = if (enabled) {
+                                Icons.Filled.Lightbulb
+                            } else {
+                                Icons.Outlined.Lightbulb
+                            }
+                        )
+                    }
                     AboutSection()
                 }
             )

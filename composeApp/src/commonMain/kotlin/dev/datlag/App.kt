@@ -18,11 +18,13 @@ val LocalDarkMode = compositionLocalOf<Boolean> { error("No dark mode state prov
 fun App(
     systemDarkTheme: Boolean = isSystemInDarkTheme()
 ) {
+    var useDarkTheme by remember { mutableStateOf(systemDarkTheme) }
+
     CompositionLocalProvider(
-        LocalDarkMode provides systemDarkTheme
+        LocalDarkMode provides useDarkTheme
     ) {
         MaterialTheme(
-            colorScheme = if (systemDarkTheme) Colors.getDarkScheme() else Colors.getLightScheme(),
+            colorScheme = if (useDarkTheme) Colors.getDarkScheme() else Colors.getLightScheme(),
             typography = Font.family().toTypography(),
         ) {
             Surface(
@@ -31,7 +33,10 @@ fun App(
                 contentColor = MaterialTheme.colorScheme.onBackground
             ) {
                 MimasuScreen(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    triggerTheme = {
+                        useDarkTheme = !useDarkTheme
+                    }
                 )
             }
         }
