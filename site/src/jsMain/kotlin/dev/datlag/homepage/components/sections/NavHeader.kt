@@ -2,12 +2,18 @@ package dev.datlag.homepage.components.sections
 
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.browser.dom.ElementTarget
+import com.varabyte.kobweb.compose.css.CSSLengthNumericValue
+import com.varabyte.kobweb.compose.css.StyleVariable
+import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.css.functions.clamp
+import com.varabyte.kobweb.compose.css.functions.saturate
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.foundation.layout.Spacer
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
+import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -22,6 +28,8 @@ import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
 import com.varabyte.kobweb.silk.components.overlay.PopupPlacement
 import com.varabyte.kobweb.silk.components.overlay.Tooltip
+import com.varabyte.kobweb.silk.init.InitSilk
+import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.animation.Keyframes
 import com.varabyte.kobweb.silk.style.animation.toAnimation
@@ -29,14 +37,71 @@ import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
+import com.varabyte.kobweb.silk.style.common.SmoothColorStyle
+import com.varabyte.kobweb.silk.style.extendedByBase
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.*
+import dev.datlag.homepage.components.style.dividerBoxShadow
 import dev.datlag.homepage.components.widgets.IconButton
 import dev.datlag.homepage.toSitePalette
+import org.jetbrains.compose.web.css.AnimationDirection
+import org.jetbrains.compose.web.css.AnimationFillMode
+import org.jetbrains.compose.web.css.AnimationTimingFunction
+import org.jetbrains.compose.web.css.DisplayStyle
+import org.jetbrains.compose.web.css.FlexDirection
+import org.jetbrains.compose.web.css.Position
+import org.jetbrains.compose.web.css.backgroundColor
+import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.flexBasis
+import org.jetbrains.compose.web.css.flexDirection
+import org.jetbrains.compose.web.css.left
+import org.jetbrains.compose.web.css.minWidth
+import org.jetbrains.compose.web.css.ms
+import org.jetbrains.compose.web.css.padding
+import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.position
+import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.rgb
+import org.jetbrains.compose.web.css.top
+import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Text
+import org.w3c.dom.HTMLElement
 
-val NavHeaderStyle = CssStyle.base {
-    Modifier.fillMaxWidth().padding(1.cssRem)
+val NavHeaderHeight by StyleVariable<CSSLengthNumericValue>()
+
+@InitSilk
+fun initNavHeaderHeight(ctx: InitSilkContext) = with(ctx.stylesheet) {
+    registerStyle("html") {
+        base { Modifier.setVariable(NavHeaderHeight, 56.px) }
+        Breakpoint.MD { Modifier.setVariable(NavHeaderHeight, 64.px) }
+    }
+}
+
+val NavHeaderBackgroundStyle = SmoothColorStyle.extendedByBase {
+    Modifier
+        .backgroundColor(getNavBackgroundColor(colorMode))
+        .backdropFilter(saturate(180.percent), blur(5.px))
+        .dividerBoxShadow()
+}
+
+val NavHeaderDarkenedBackgroundStyle = NavHeaderBackgroundStyle.extendedByBase {
+    Modifier.backgroundColor(getNavBackgroundColor(colorMode).copyf(alpha = 0.8f))
+}
+
+val NavHeaderStyle = NavHeaderBackgroundStyle.extendedByBase {
+    Modifier
+        .fillMaxWidth()
+        .position(Position.Sticky)
+        .top(0.percent)
+        .height(NavHeaderHeight.value())
+}
+
+private fun getNavBackgroundColor(colorMode: ColorMode): Color.Rgb {
+    return when (colorMode) {
+        ColorMode.DARK -> Colors.Black
+        ColorMode.LIGHT -> Colors.White
+    }.copyf(alpha = 0.65f)
 }
 
 @Composable
@@ -45,9 +110,54 @@ private fun NavLink(path: String, text: String) {
 }
 
 @Composable
-private fun MenuItems() {
+private fun MenuItems(dropDownSupported: Boolean) {
+    var legalDropdownVisible by remember { mutableStateOf(false) }
+
     NavLink("/", "Home")
     NavLink("/about", "About")
+    NavLink("/contact", "Contact")
+
+    if (dropDownSupported) {
+        Div(attrs = {
+            style {
+                position(Position.Relative)
+            }
+            onMouseEnter { legalDropdownVisible = true }
+            onMouseLeave { legalDropdownVisible = false }
+        }) {
+            val colorMode = ColorMode.current
+
+            Text("Legal")
+            if (legalDropdownVisible) {
+                Div(attrs = {
+                    style {
+                        position(Position.Absolute)
+                        top(100.percent)
+                        left(0.px)
+                        display(DisplayStyle.Flex)
+                        backgroundColor(getNavBackgroundColor(colorMode))
+                        flexDirection(FlexDirection.Column)
+                        minWidth(200.px)
+                        padding(10.px)
+                    }
+                    onMouseEnter {
+                        legalDropdownVisible = true
+                    }
+                    onMouseLeave {
+                        legalDropdownVisible = false
+                    }
+                }) {
+                    NavLink("/disclaimer", "Disclaimer")
+                    NavLink("/privacy-policy", "Privacy Policy")
+                    NavLink("/terms-conditions", "Terms & Conditions")
+                }
+            }
+        }
+    } else {
+        NavLink("/disclaimer", "Disclaimer")
+        NavLink("/privacy-policy", "Privacy Policy")
+        NavLink("/terms-conditions", "Terms & Conditions")
+    }
 }
 
 @Composable
@@ -100,17 +210,14 @@ enum class SideMenuState {
 @Composable
 fun NavHeader() {
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        Link("https://kobweb.varabyte.com") {
-            // Block display overrides inline display of the <img> tag, so it calculates centering better
-            Image("/kobweb-logo.png", "Kobweb Logo", Modifier.height(2.cssRem).display(DisplayStyle.Block))
-        }
-
         Spacer()
 
         Row(Modifier.gap(1.5.cssRem).displayIfAtLeast(Breakpoint.MD), verticalAlignment = Alignment.CenterVertically) {
-            MenuItems()
+            MenuItems(dropDownSupported = true)
             ColorModeButton()
         }
+
+        Spacer()
 
         Row(
             Modifier
@@ -167,8 +274,9 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                 horizontalAlignment = Alignment.End
             ) {
                 CloseButton(onClick = { close() })
-                Column(Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem), horizontalAlignment = Alignment.End) {
-                    MenuItems()
+                Column(Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem).textAlign(
+                    TextAlign.End), horizontalAlignment = Alignment.End) {
+                    MenuItems(dropDownSupported = false)
                 }
             }
         }
