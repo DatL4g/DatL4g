@@ -1,26 +1,32 @@
-rootProject.name = "Homepage"
-
-include(":composeApp")
-
 pluginManagement {
     repositories {
-        google()
-        mavenCentral()
         gradlePluginPortal()
-        maven("https://jitpack.io")
-        maven("https://jogamp.org/deployment/maven")
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 }
 
 dependencyResolutionManagement {
     repositories {
-        google()
         mavenCentral()
-        maven("https://jitpack.io")
-        maven("https://jogamp.org/deployment/maven")
-        maven("https://s01.oss.sonatype.org/content/repositories/snapshots/")
-        maven("https://oss.sonatype.org/content/repositories/snapshots")
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        google()
     }
 }
+
+// The following block registers dependencies to enable Kobweb snapshot support. It is safe to delete or comment out
+// this block if you never plan to use them.
+gradle.settingsEvaluated {
+    fun RepositoryHandler.kobwebSnapshots() {
+        maven("https://central.sonatype.com/repository/maven-snapshots/") {
+            mavenContent {
+                includeGroupByRegex("com\\.varabyte\\.kobweb.*")
+                snapshotsOnly()
+            }
+        }
+    }
+
+    pluginManagement.repositories { kobwebSnapshots() }
+    dependencyResolutionManagement.repositories { kobwebSnapshots() }
+}
+
+rootProject.name = "homepage"
+
+include(":site")

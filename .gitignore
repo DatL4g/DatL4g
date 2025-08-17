@@ -1,5 +1,12 @@
+# General ignores
+out
+kotlin-js-store
 
+# IntelliJ ignores
 *.iml
+/*.ipr
+
+# Gradle ignores
 .gradle
 .idea
 .kotlin

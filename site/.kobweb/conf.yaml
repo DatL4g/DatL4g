@@ -1,0 +1,14 @@
+site:
+  title: "Homepage"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/homepage.js"
+      api: "build/libs/homepage.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/homepage.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
