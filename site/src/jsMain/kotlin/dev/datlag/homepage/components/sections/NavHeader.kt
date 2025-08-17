@@ -3,8 +3,10 @@ package dev.datlag.homepage.components.sections
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.browser.dom.ElementTarget
 import com.varabyte.kobweb.compose.css.CSSLengthNumericValue
+import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.StyleVariable
 import com.varabyte.kobweb.compose.css.TextAlign
+import com.varabyte.kobweb.compose.css.cursor
 import com.varabyte.kobweb.compose.css.functions.blur
 import com.varabyte.kobweb.compose.css.functions.clamp
 import com.varabyte.kobweb.compose.css.functions.saturate
@@ -121,6 +123,7 @@ private fun MenuItems(dropDownSupported: Boolean) {
         Div(attrs = {
             style {
                 position(Position.Relative)
+                cursor(Cursor.Pointer)
             }
             onMouseEnter { legalDropdownVisible = true }
             onMouseLeave { legalDropdownVisible = false }
