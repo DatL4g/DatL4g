@@ -102,6 +102,7 @@ import org.jetbrains.compose.web.css.fontSize
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.height
 import org.jetbrains.compose.web.css.maxWidth
+import org.jetbrains.compose.web.css.minHeight
 import org.jetbrains.compose.web.css.outline
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -238,7 +239,8 @@ fun ContactPage() {
                     onInput { message = it.value }
                     classes("silk-input", "silk-input-outlined")
                     style {
-                        width(100.percent)
+                        width(400.px)
+                        minHeight(100.px)
                     }
                 }
             }
