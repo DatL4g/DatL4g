@@ -44,33 +44,6 @@ val HeroContainerStyle = CssStyle {
     Breakpoint.MD { Modifier.margin { top(20.vh) } }
 }
 
-// A demo grid that appears on the homepage because it looks good
-val HomeGridStyle = CssStyle.base {
-    Modifier
-        .gap(0.5.cssRem)
-        .width(70.cssRem)
-        .height(18.cssRem)
-}
-
-private val GridCellColorVar by StyleVariable<Color>()
-val HomeGridCellStyle = CssStyle.base {
-    Modifier
-        .backgroundColor(GridCellColorVar.value())
-        .boxShadow(blurRadius = 0.6.cssRem, color = GridCellColorVar.value())
-        .borderRadius(1.cssRem)
-}
-
-@Composable
-private fun GridCell(color: Color, row: Int, column: Int, width: Int? = null, height: Int? = null) {
-    Div(
-        HomeGridCellStyle.toModifier()
-            .setVariable(GridCellColorVar, color)
-            .gridItem(row, column, width, height)
-            .toAttrs()
-    )
-}
-
-
 @InitRoute
 fun initHomePage(ctx: InitRouteContext) {
     ctx.data.add(PageLayoutData("Home"))
@@ -105,7 +78,7 @@ fun HomePage() {
 
                 Div(SubheadlineTextStyle.toAttrs()) {
                     SpanText("You can read the ")
-                    Link("/about-us", "About")
+                    Link("/about", "About")
                     SpanText(" page for more information.")
                 }
 
@@ -114,30 +87,11 @@ fun HomePage() {
                     // Change this click handler with your call-to-action behavior
                     // here. Link to an order page? Open a calendar UI? Play a movie?
                     // Up to you!
-                    ctx.router.tryRoutingTo("/about-us")
+                    ctx.router.tryRoutingTo("/contact")
                 }, colorPalette = ColorPalettes.Blue) {
                     Text("This could be your CTA")
                 }
             }
-        }
-
-        Div(
-            HomeGridStyle
-            .toModifier()
-            .displayIfAtLeast(Breakpoint.MD)
-            .grid {
-                rows { repeat(3) { size(1.fr) } }
-                columns { repeat(5) { size(1.fr) } }
-            }
-            .toAttrs()
-        ) {
-            val sitePalette = ColorMode.current.toSitePalette()
-            GridCell(sitePalette.brand.primary, 1, 1, 2, 2)
-            GridCell(ColorPalettes.Monochrome._600, 1, 3)
-            GridCell(ColorPalettes.Monochrome._100, 1, 4, width = 2)
-            GridCell(sitePalette.brand.accent, 2, 3, width = 2)
-            GridCell(ColorPalettes.Monochrome._300, 2, 5)
-            GridCell(ColorPalettes.Monochrome._800, 3, 1, width = 5)
         }
     }
 }

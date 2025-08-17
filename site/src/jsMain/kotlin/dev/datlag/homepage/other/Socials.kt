@@ -23,7 +23,7 @@ sealed interface Socials {
     }
 
     data object GitHub : Socials {
-        override val link: String = ""
+        override val link: String = "https://github.com/DatL4g"
         override val color: Color = Colors.White
         override val brandColor: Color = Color.rgb(0x333333)
     }

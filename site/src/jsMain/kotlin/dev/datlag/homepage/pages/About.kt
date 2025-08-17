@@ -52,7 +52,7 @@ import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.Text
 
 @InitRoute
-fun initAboutUsPage(ctx: InitRouteContext) {
+fun initAboutPage(ctx: InitRouteContext) {
     ctx.data.add(PageLayoutData("About"))
 }
 
