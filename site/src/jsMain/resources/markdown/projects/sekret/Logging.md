@@ -67,4 +67,4 @@ plugins {
 
 ## Related functionality
 
-If you are more interested in keeping application secrets safe, see the companion page about [**Application Secrets**](SekretSecrets.md)
+If you are more interested in keeping application secrets safe, see the companion page about [**Application Secrets**](Secrets.md)

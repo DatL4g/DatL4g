@@ -61,4 +61,4 @@ plugins {
 
 ## Related functionality
 
-If you are more interested in preventing secrets from being accidentally leaked into logs (for example via toString or string interpolation), see the companion page about [**Secure Logging**](SekretLogging.md)
+If you are more interested in preventing secrets from being accidentally leaked into logs (for example via toString or string interpolation), see the companion page about [**Secure Logging**](Logging.md)
