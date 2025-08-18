@@ -10,10 +10,15 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.navigation.BasePath
 import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.graphics.ImageStyle
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.text.SpanText
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.extendedBy
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import dev.datlag.homepage.components.sections.stack.style.SkillItemImageVariant
@@ -23,6 +28,7 @@ import dev.datlag.homepage.components.sections.stack.style.SkillsGridStyle
 import dev.datlag.homepage.model.Skill
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.H1
+import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -72,9 +78,12 @@ private fun SkillItem(
         horizontalArrangement = horizontal,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Image(
-            src = if (colorMode.isLight) skill.iconLight else skill.iconDark,
-            variant = SkillItemImageVariant
+        Img(
+            src = BasePath.prependTo(if (colorMode.isLight) skill.iconLight else skill.iconDark),
+            attrs = ImageStyle.toModifier(SkillItemImageVariant).toAttrs {
+                attr("loading", "lazy")
+                attr("decoding", "async")
+            }
         )
         Column(
             modifier = Modifier.margin(left = 0.75.cssRem),

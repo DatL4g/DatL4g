@@ -9,6 +9,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.alignItems
+import com.varabyte.kobweb.compose.ui.modifiers.attr
 import com.varabyte.kobweb.compose.ui.modifiers.background
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.display
@@ -40,6 +41,7 @@ import com.varabyte.kobweb.silk.theme.shapes.Circle
 import com.varabyte.kobweb.silk.theme.shapes.Rect
 import com.varabyte.kobweb.silk.theme.shapes.clip
 import dev.datlag.homepage.components.layouts.PageLayoutData
+import dev.datlag.homepage.model.Res
 import dev.datlag.homepage.other.Socials
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
@@ -81,9 +83,12 @@ fun AboutPage() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                src = "/self.jpg",
-                description = "Jeff Retz",
-                modifier = Modifier.clip(Rect(0, 20.px)),
+                src = Res.drawables.self,
+                description = Res.strings.name,
+                modifier = Modifier
+                    .clip(Rect(0, 20.px))
+                    .attr("loading", "lazy")
+                    .attr("decoding", "async"),
                 height = 384,
                 width = 288
             )
@@ -91,7 +96,7 @@ fun AboutPage() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 H3 {
-                    Text(value = "Jeff Retz")
+                    Text(value = Res.strings.name)
                 }
                 SpanText(
                     text = "I am a qualified Software Developer from \uD83C\uDDE9\uD83C\uDDEA Germany.",
