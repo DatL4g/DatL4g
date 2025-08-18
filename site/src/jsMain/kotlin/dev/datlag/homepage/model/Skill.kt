@@ -8,7 +8,7 @@ sealed interface Skill {
     val iconDark: String
 
     data object AndroidStudio : Skill {
-        override val name: String = "Android Studio"
+        override val name: String = "Android"
         override val level: Level = Level.Advanced
         override val iconLight: String = "skills/android_studio_dark.svg"
         override val iconDark: String = "skills/android_studio_light.svg"
@@ -47,6 +47,34 @@ sealed interface Skill {
         override val level: Level = Level.Advanced
         override val iconLight: String = "skills/kotlin.svg"
         override val iconDark: String = "skills/kotlin.svg"
+    }
+
+    data object PHP : Skill {
+        override val name: String = "PHP"
+        override val level: Level = Level.Beginner
+        override val iconLight: String = "skills/php.svg"
+        override val iconDark: String = "skills/php.svg"
+    }
+
+    data object JS : Skill {
+        override val name: String = "Javascript"
+        override val level: Level = Level.Intermediate
+        override val iconLight: String = "skills/js.svg"
+        override val iconDark: String = "skills/js.svg"
+    }
+
+    data object Git : Skill {
+        override val name: String = "Git"
+        override val level: Level = Level.Intermediate
+        override val iconLight: String = "skills/git.svg"
+        override val iconDark: String = "skills/git.svg"
+    }
+
+    data object Markdown : Skill {
+        override val name: String = "Markdown"
+        override val level: Level = Level.Advanced
+        override val iconLight: String = "skills/markdown_dark.svg"
+        override val iconDark: String = "skills/markdown_light.svg"
     }
 
     sealed interface Level {

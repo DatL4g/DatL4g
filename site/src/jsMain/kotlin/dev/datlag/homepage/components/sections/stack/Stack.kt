@@ -43,7 +43,7 @@ fun Stack() {
         ) {
             SimpleGrid(
                 modifier = SkillsGridStyle.toModifier(),
-                numColumns = numColumns(base = 2, md = 6)
+                numColumns = numColumns(base = 2, md = 5)
             ) {
                 SkillItem(Skill.Kotlin)
                 SkillItem(Skill.AndroidStudio)
@@ -51,6 +51,10 @@ fun Stack() {
                 SkillItem(Skill.GitHub)
                 SkillItem(Skill.Gradle)
                 SkillItem(Skill.Firebase)
+                SkillItem(Skill.PHP)
+                SkillItem(Skill.JS)
+                SkillItem(Skill.Git)
+                SkillItem(Skill.Markdown)
             }
         }
     }

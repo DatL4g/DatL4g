@@ -12,6 +12,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.alignItems
 import com.varabyte.kobweb.compose.ui.modifiers.background
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.display
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.compose.ui.modifiers.flexDirection
 import com.varabyte.kobweb.compose.ui.modifiers.gap
 import com.varabyte.kobweb.compose.ui.modifiers.justifyContent
@@ -62,10 +63,11 @@ fun initAboutPage(ctx: InitRouteContext) {
 @Composable
 fun AboutPage() {
     Column(
-        modifier = Modifier.gap(2.cssRem).padding {
+        modifier = Modifier.fillMaxSize().gap(2.cssRem).padding {
             leftRight(16.px)
         },
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
         val breakpoint = rememberBreakpoint()
 
