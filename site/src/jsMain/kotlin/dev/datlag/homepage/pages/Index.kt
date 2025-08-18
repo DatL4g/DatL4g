@@ -2,9 +2,11 @@ package dev.datlag.homepage.pages
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.StyleVariable
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
+import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
@@ -36,6 +38,8 @@ import org.jetbrains.compose.web.dom.Text
 import dev.datlag.homepage.HeadlineTextStyle
 import dev.datlag.homepage.SubheadlineTextStyle
 import dev.datlag.homepage.components.layouts.PageLayoutData
+import dev.datlag.homepage.components.sections.home.Home
+import dev.datlag.homepage.components.sections.stack.Stack
 import dev.datlag.homepage.toSitePalette
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
@@ -53,45 +57,14 @@ fun initHomePage(ctx: InitRouteContext) {
 @Layout(".components.layouts.PageLayout")
 @Composable
 fun HomePage() {
-    Row(HeroContainerStyle.toModifier()) {
-        Box {
-            val sitePalette = ColorMode.current.toSitePalette()
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        val sitePalette = ColorMode.current.toSitePalette()
 
-            Column(Modifier.gap(2.cssRem)) {
-                Div(HeadlineTextStyle.toAttrs()) {
-                    SpanText(
-                        "Use this template as your starting point for ", Modifier.color(
-                            when (ColorMode.current) {
-                                ColorMode.LIGHT -> Colors.Black
-                                ColorMode.DARK -> Colors.White
-                            }
-                        )
-                    )
-                    SpanText(
-                        "Kobweb",
-                        Modifier
-                            .color(sitePalette.brand.accent)
-                            // Use a shadow so this light-colored word is more visible in light mode
-                            .textShadow(0.px, 0.px, blurRadius = 0.5.cssRem, color = Colors.Gray)
-                    )
-                }
-
-                Div(SubheadlineTextStyle.toAttrs()) {
-                    SpanText("You can read the ")
-                    Link("/about", "About")
-                    SpanText(" page for more information.")
-                }
-
-                val ctx = rememberPageContext()
-                Button(onClick = {
-                    // Change this click handler with your call-to-action behavior
-                    // here. Link to an order page? Open a calendar UI? Play a movie?
-                    // Up to you!
-                    ctx.router.tryRoutingTo("/contact")
-                }, colorPalette = ColorPalettes.Blue) {
-                    Text("This could be your CTA")
-                }
-            }
-        }
+        Home(sitePalette)
+        Stack()
     }
 }

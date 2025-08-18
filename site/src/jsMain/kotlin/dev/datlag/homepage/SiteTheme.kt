@@ -11,30 +11,22 @@ import com.varabyte.kobweb.silk.theme.colors.palette.color
 class SitePalette(
     val nearBackground: Color,
     val background: Color,
-    val brand: Brand,
+    val brand: Brand = Brand(),
 ) {
     class Brand(
-        val primary: Color = Color.rgb(0x3C83EF),
-        val accent: Color = Color.rgb(0xF3DB5B),
+        val primary: Color = Color.rgb(0xd56199),
+        val accent: Color = Color.rgb(0xCA397F),
     )
 }
 
 object SitePalettes {
     val light = SitePalette(
         nearBackground = Color.rgb(0xF4F6FA),
-        background = Color.rgb(0xFAFAFA),
-        brand = SitePalette.Brand(
-            primary = Color.rgb(0x3C83EF),
-            accent = Color.rgb(0xFCBA03),
-        )
+        background = Color.rgb(0xFAFAFA)
     )
     val dark = SitePalette(
         nearBackground = Color.rgb(0x13171F),
-        background = Color.rgb(0x06080B),
-        brand = SitePalette.Brand(
-            primary = Color.rgb(0x3C83EF),
-            accent = Color.rgb(0xF3DB5B),
-        )
+        background = Color.rgb(0x06080B)
     )
 }
 

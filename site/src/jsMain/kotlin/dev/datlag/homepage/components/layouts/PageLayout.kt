@@ -2,6 +2,7 @@ package dev.datlag.homepage.components.layouts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
@@ -38,7 +39,7 @@ fun PageLayout(ctx: PageContext, content: @Composable ColumnScope.() -> Unit) {
     val sitePalette = ColorMode.current.toSitePalette()
 
     LaunchedEffect(data.title) {
-        document.title = "Kobweb - ${data.title}"
+        document.title = "Jeff Retz - ${data.title}"
     }
 
     Box(
@@ -61,8 +62,9 @@ fun PageLayout(ctx: PageContext, content: @Composable ColumnScope.() -> Unit) {
             // https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context
             // Some people might have used z-index instead, but best practice is to avoid that if possible, because
             // as a site gets complex, Z-fighting can be a huge pain to track down.
-            Modifier.fillMaxSize().gridRow(1),
+            modifier = Modifier.fillMaxSize().gridRow(1),
             horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
             NavHeader()
             Div(PageContentStyle.toAttrs()) {
