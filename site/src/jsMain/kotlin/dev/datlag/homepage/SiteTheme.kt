@@ -8,13 +8,9 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import com.varabyte.kobweb.silk.theme.colors.palette.background
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 
-/**
- * @property nearBackground A useful color to apply to a container that should differentiate itself from the background
- *   but just a little.
- */
 class SitePalette(
     val nearBackground: Color,
-    val cobweb: Color,
+    val background: Color,
     val brand: Brand,
 ) {
     class Brand(
@@ -26,7 +22,7 @@ class SitePalette(
 object SitePalettes {
     val light = SitePalette(
         nearBackground = Color.rgb(0xF4F6FA),
-        cobweb = Colors.LightGray,
+        background = Color.rgb(0xFAFAFA),
         brand = SitePalette.Brand(
             primary = Color.rgb(0x3C83EF),
             accent = Color.rgb(0xFCBA03),
@@ -34,7 +30,7 @@ object SitePalettes {
     )
     val dark = SitePalette(
         nearBackground = Color.rgb(0x13171F),
-        cobweb = Colors.LightGray.inverted(),
+        background = Color.rgb(0x06080B),
         brand = SitePalette.Brand(
             primary = Color.rgb(0x3C83EF),
             accent = Color.rgb(0xF3DB5B),
@@ -51,8 +47,8 @@ fun ColorMode.toSitePalette(): SitePalette {
 
 @InitSilk
 fun initTheme(ctx: InitSilkContext) {
-    ctx.theme.palettes.light.background = Color.rgb(0xFAFAFA)
+    ctx.theme.palettes.light.background = SitePalettes.light.background
     ctx.theme.palettes.light.color = Colors.Black
-    ctx.theme.palettes.dark.background = Color.rgb(0x06080B)
+    ctx.theme.palettes.dark.background = SitePalettes.dark.background
     ctx.theme.palettes.dark.color = Colors.White
 }

@@ -18,7 +18,6 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
 import com.varabyte.kobweb.silk.components.icons.MoonIcon
@@ -32,10 +31,8 @@ import com.varabyte.kobweb.silk.components.overlay.PopupPlacement
 import com.varabyte.kobweb.silk.components.overlay.Tooltip
 import com.varabyte.kobweb.silk.init.InitSilk
 import com.varabyte.kobweb.silk.init.InitSilkContext
-import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.animation.Keyframes
 import com.varabyte.kobweb.silk.style.animation.toAnimation
-import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
@@ -55,7 +52,6 @@ import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.backgroundColor
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.display
-import org.jetbrains.compose.web.css.flexBasis
 import org.jetbrains.compose.web.css.flexDirection
 import org.jetbrains.compose.web.css.left
 import org.jetbrains.compose.web.css.minWidth
@@ -64,11 +60,9 @@ import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.position
 import org.jetbrains.compose.web.css.px
-import org.jetbrains.compose.web.css.rgb
 import org.jetbrains.compose.web.css.top
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
-import org.w3c.dom.HTMLElement
 
 val NavHeaderHeight by StyleVariable<CSSLengthNumericValue>()
 
