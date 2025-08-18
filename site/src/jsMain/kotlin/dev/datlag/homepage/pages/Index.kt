@@ -40,6 +40,7 @@ import dev.datlag.homepage.SubheadlineTextStyle
 import dev.datlag.homepage.components.layouts.PageLayoutData
 import dev.datlag.homepage.components.sections.home.Home
 import dev.datlag.homepage.components.sections.stack.Stack
+import dev.datlag.homepage.model.Res
 import dev.datlag.homepage.toSitePalette
 
 // Container that has a tagline and grid on desktop, and just the tagline on mobile
@@ -50,7 +51,7 @@ val HeroContainerStyle = CssStyle {
 
 @InitRoute
 fun initHomePage(ctx: InitRouteContext) {
-    ctx.data.add(PageLayoutData("Home"))
+    ctx.data.add(PageLayoutData(Res.strings.home))
 }
 
 @Page

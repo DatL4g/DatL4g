@@ -42,7 +42,7 @@ import com.varabyte.kobweb.silk.theme.shapes.Rect
 import com.varabyte.kobweb.silk.theme.shapes.clip
 import dev.datlag.homepage.components.layouts.PageLayoutData
 import dev.datlag.homepage.model.Res
-import dev.datlag.homepage.other.Socials
+import dev.datlag.homepage.model.Socials
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.FlexDirection
@@ -56,7 +56,7 @@ import org.jetbrains.compose.web.dom.Text
 
 @InitRoute
 fun initAboutPage(ctx: InitRouteContext) {
-    ctx.data.add(PageLayoutData("About"))
+    ctx.data.add(PageLayoutData(Res.strings.about))
 }
 
 @OptIn(DelicateApi::class)
@@ -74,7 +74,7 @@ fun AboutPage() {
         val breakpoint = rememberBreakpoint()
 
         H1 {
-            Text(value = "About Me")
+            Text(value = Res.strings.aboutMe)
         }
         Row(
             modifier = Modifier
@@ -99,15 +99,15 @@ fun AboutPage() {
                     Text(value = Res.strings.name)
                 }
                 SpanText(
-                    text = "I am a qualified Software Developer from \uD83C\uDDE9\uD83C\uDDEA Germany.",
+                    text = Res.strings.aboutMeText1,
                     modifier = Modifier.textAlign(TextAlign.Center)
                 )
                 SpanText(
-                    text = "After 3 years of dual apprenticeship and additional 3-4 years professional experience, I started my studies and am self-employed.",
+                    text = Res.strings.aboutMeText2,
                     modifier = Modifier.textAlign(TextAlign.Center)
                 )
                 SpanText(
-                    text = "I specialized in the Kotlin ecosystem, especially in the multiplatform context and contribute to several open source projects.",
+                    text = Res.strings.aboutMeText3,
                     modifier = Modifier.textAlign(TextAlign.Center)
                 )
 

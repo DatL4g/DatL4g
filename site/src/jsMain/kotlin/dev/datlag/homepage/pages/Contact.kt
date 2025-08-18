@@ -80,7 +80,8 @@ import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.style.vars.color.ColorVar
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import dev.datlag.homepage.components.layouts.PageLayoutData
-import dev.datlag.homepage.other.Socials
+import dev.datlag.homepage.model.Res
+import dev.datlag.homepage.model.Socials
 import dev.datlag.homepage.toSitePalette
 import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.ButtonType
@@ -128,7 +129,7 @@ val ContactItemStyle = CssStyle.base {
 
 @InitRoute
 fun initContactPage(ctx: InitRouteContext) {
-    ctx.data.add(PageLayoutData("Contact"))
+    ctx.data.add(PageLayoutData(Res.strings.contact))
 }
 
 @Page
@@ -146,48 +147,48 @@ fun ContactPage() {
         var message by remember { mutableStateOf("") }
 
         H1(Modifier.gap(2.cssRem).toAttrs()) {
-            Text(value = "Contact")
+            Text(value = Res.strings.contact)
         }
         SpanText(
-            text = "Don't hesitate to get help or just chat with me!",
+            text = Res.strings.contactText1,
             modifier = Modifier.textAlign(TextAlign.Center)
         )
         SpanText(
-            text = "Check my social media platforms below.",
+            text = Res.strings.contactText2,
             modifier = Modifier.textAlign(TextAlign.Center)
         )
         SimpleGrid(numColumns(1, md = 2)) {
             ContactItem {
                 FaEnvelopesBulk()
-                SpanText("Email Me", Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
-                A(href = "mailto:contact@datlag.dev") {
-                    SpanText("contact@datlag.dev")
+                SpanText(Res.strings.contactEmail, Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
+                A(href = Socials.mailTo) {
+                    SpanText(Res.strings.contactEmailName)
                 }
             }
             ContactItem {
                 FaLinkedin()
-                SpanText("LinkedIn", Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
+                SpanText(Res.strings.contactLinkedIn, Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
                 A(href = Socials.LinkedIn.link) {
-                    SpanText("jeff-retz")
+                    SpanText(Res.strings.contactLinkedInName)
                 }
             }
             ContactItem {
                 FaGithub()
-                SpanText("GitHub", Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
-                A(href = "https://github.com/DatL4g") {
-                    SpanText("DatL4g")
+                SpanText(Res.strings.contactGitHub, Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
+                A(href = Socials.GitHub.link) {
+                    SpanText(Res.strings.contactGitHubName)
                 }
             }
             ContactItem {
                 FaInstagram()
-                SpanText("Instagram", Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
+                SpanText(Res.strings.contactInstagram, Modifier.fontWeight(FontWeight.Bold).margin(bottom = 0.75.cssRem))
                 A(href = Socials.Instagram.link) {
-                    SpanText("the_dev_jeff")
+                    SpanText(Res.strings.contactInstagramName)
                 }
             }
         }
         H2(Modifier.gap(2.cssRem).toAttrs()) {
-            Text("Send a Message")
+            Text(Res.strings.contactSendMessage)
         }
         Form(
             attrs = Modifier
@@ -200,16 +201,14 @@ fun ContactPage() {
                     onSubmit { event ->
                         event.preventDefault()
 
-                        val body = """
-                            Hello from $name!
-                            
-                            $message
-                        """.trimIndent()
-                        val url = "mailto:contact@datlag.dev" +
-                                "?subject=${encodeURIComponent(subject)}" +
-                                "&body=${encodeURIComponent(body)}"
-
-                        window.open(url, "_blank")
+                        window.open(
+                            Socials.mailTo(
+                                name = name,
+                                subject = subject,
+                                message = message
+                            ),
+                            "_blank"
+                        )
                     }
                 }
         ) {
@@ -217,14 +216,14 @@ fun ContactPage() {
                 TextInput(
                     text = name,
                     onTextChange = { name = it },
-                    placeholder = "Name"
+                    placeholder = Res.strings.contactFieldName
                 )
             }
             InputGroup {
                 TextInput(
                     text = subject,
                     onTextChange = { subject = it },
-                    placeholder = "Subject"
+                    placeholder = Res.strings.contactFieldSubject
                 )
             }
             Row(
@@ -234,7 +233,7 @@ fun ContactPage() {
                     .alignItems(AlignItems.Stretch)
             ) {
                 TextArea(message) {
-                    placeholder("Your message")
+                    placeholder(Res.strings.contactFieldMessage)
                     value(message)
                     onInput { message = it.value }
                     classes("silk-input", "silk-input-outlined")
