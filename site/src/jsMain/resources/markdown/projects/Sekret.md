@@ -14,14 +14,14 @@ Sekret is split into two complementary parts:
 
 ## 1. Secure Logging
 
-Link: [Logging](SekretLogging.md)
+Link: [Logging](sekret/Logging.md)
 
 **Purpose:** Automatically redact sensitive data from logs to prevent accidental leaks.  
 **Usage recommendation:** Use this whenever your app handles tokens, passwords, API keys, or any personal data in memory and may log it. It reduces the risk of exposing secrets in console output, Crashlytics, or log files.
 
 ## 2. Application Secrets
 
-Link: [Secrets](SekretSecrets.md)
+Link: [Secrets](sekret/Secrets.md)
 
 **Purpose:** Embed secrets in a safer, obfuscated way inside your client-side binaries.  
 **Usage recommendation:** Use this when your app requires API keys or other secrets at runtime. This makes extracting secrets from APKs or IPAs harder, though client-side secrets are never perfectly secure. For full coverage, combine this with Secure Logging to avoid accidental leaks at runtime.

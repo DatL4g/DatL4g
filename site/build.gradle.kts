@@ -55,7 +55,7 @@ kobweb {
             head.add {
                 link(href = "./manifest.json", rel = "manifest")
             }
-            description.set("Powered by Kobweb")
+            description.set("Jeff Retz - Professional Kotlin Multiplatform Developer")
         }
     }
 }

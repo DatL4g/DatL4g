@@ -3,7 +3,7 @@ layout: .components.layouts.MarkdownLayout
 title: Sekret - Logging
 ---
 
-# Sekret — Application Secrets
+# Sekret - Application Secrets
 
 **Repository:** https://github.com/DatL4g/Sekret
 
