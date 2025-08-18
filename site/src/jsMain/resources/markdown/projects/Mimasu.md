@@ -38,8 +38,7 @@ Mimasu supports an extension system so streaming providers can integrate **direc
 
 ## Screenshots
 
-| <img src="/mimasu_1.webp" width="350" height="720" loading="lazy" decoding="async" alt="Home" /> | <img src="/mimasu_2.webp" width="350" height="720" loading="lazy" decoding="async" alt="Series" /> | <img src="/mimasu_3.webp" width="350" height="720" loading="lazy" decoding="async" alt="Movie" /> |
-|--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+{{{ .components.widgets.MimasuScreenshotSection }}}
 
 ## How Extensions Work (High-Level)
 
