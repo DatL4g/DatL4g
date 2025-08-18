@@ -18,6 +18,8 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.thenIf
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
 import com.varabyte.kobweb.silk.components.icons.MoonIcon
@@ -106,55 +108,12 @@ private fun NavLink(path: String, text: String) {
 }
 
 @Composable
-private fun MenuItems(dropDownSupported: Boolean) {
-    var legalDropdownVisible by remember { mutableStateOf(false) }
-
+private fun MenuItems() {
     NavLink("/", "Home")
+    NavLink("/projects", "Projects")
     NavLink("/about", "About")
     NavLink("/contact", "Contact")
-
-    if (dropDownSupported) {
-        Div(attrs = {
-            style {
-                position(Position.Relative)
-                cursor(Cursor.Pointer)
-            }
-            onMouseEnter { legalDropdownVisible = true }
-            onMouseLeave { legalDropdownVisible = false }
-        }) {
-            val colorMode = ColorMode.current
-
-            Text("Legal")
-            if (legalDropdownVisible) {
-                Div(attrs = {
-                    style {
-                        position(Position.Absolute)
-                        top(100.percent)
-                        left(0.px)
-                        display(DisplayStyle.Flex)
-                        backgroundColor(getNavBackgroundColor(colorMode))
-                        flexDirection(FlexDirection.Column)
-                        minWidth(200.px)
-                        padding(10.px)
-                    }
-                    onMouseEnter {
-                        legalDropdownVisible = true
-                    }
-                    onMouseLeave {
-                        legalDropdownVisible = false
-                    }
-                }) {
-                    NavLink("/disclaimer", "Disclaimer")
-                    NavLink("/privacy-policy", "Privacy Policy")
-                    NavLink("/terms-conditions", "Terms & Conditions")
-                }
-            }
-        }
-    } else {
-        NavLink("/disclaimer", "Disclaimer")
-        NavLink("/privacy-policy", "Privacy Policy")
-        NavLink("/terms-conditions", "Terms & Conditions")
-    }
+    NavLink("/legal", "Legal")
 }
 
 @Composable
@@ -210,7 +169,7 @@ fun NavHeader() {
         Spacer()
 
         Row(Modifier.gap(1.5.cssRem).displayIfAtLeast(Breakpoint.MD), verticalAlignment = Alignment.CenterVertically) {
-            MenuItems(dropDownSupported = true)
+            MenuItems()
             ColorModeButton()
         }
 
@@ -273,7 +232,7 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                 CloseButton(onClick = { close() })
                 Column(Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem).textAlign(
                     TextAlign.End), horizontalAlignment = Alignment.End) {
-                    MenuItems(dropDownSupported = false)
+                    MenuItems()
                 }
             }
         }
