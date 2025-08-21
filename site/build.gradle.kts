@@ -108,6 +108,14 @@ tasks.register("generateSitemap") {
         null
     } ?: "https://datlag.dev"
 
+    val excludedPrefixes = (findProperty("sitemapExcludes") as? String?)?.ifBlank {
+        null
+    }?.split(',')?.map { it.trim().trim('/') }?.filter { it.isNotBlank() }
+        ?: listOf(
+            "yandex_e3ddb616d3fefa55",
+            "navera11ac17817104547c5db4123359748bc"
+        )
+
     val exportFile = File(exportDir, "sitemap.xml")
 
     inputs.dir(exportDir)
@@ -141,6 +149,8 @@ tasks.register("generateSitemap") {
                 rel.endsWith("/index.html") -> rel.removeSuffix("/index.html") // folder pages
                 else -> rel.removeSuffix(".html")
             }.trim('/')
+
+            if (excludedPrefixes.any { urlPath.startsWith(it) }) return@forEach
 
             val lastMod = Files.getLastModifiedTime(path).toInstant().atOffset(ZoneOffset.UTC).toLocalDate()
             val loc = if (urlPath.isEmpty()) "$base/" else "$base/$urlPath"
