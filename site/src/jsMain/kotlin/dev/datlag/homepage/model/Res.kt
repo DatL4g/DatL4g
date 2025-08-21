@@ -44,6 +44,9 @@ data object Res {
         val contactLinkedInName: String = "jeff-retz"
         val contactGitHubName: String = "DatL4g"
         val contactInstagramName: String = "the_dev_jeff"
+
+        val stackTitle: String = "Tech Stack"
+        val stackDescription: String = "These are the technologies I have worked with and actively use or have used in the past."
     }
 
     data object drawables {

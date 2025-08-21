@@ -1,6 +1,7 @@
 ---
 layout: .components.layouts.MarkdownLayout
 title: Legal
+readingTime: false
 ---
 
 # Legal

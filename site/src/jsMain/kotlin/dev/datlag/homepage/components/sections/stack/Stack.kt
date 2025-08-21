@@ -1,6 +1,7 @@
 package dev.datlag.homepage.components.sections.stack
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -10,6 +11,7 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.navigation.BasePath
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -25,6 +27,7 @@ import dev.datlag.homepage.components.sections.stack.style.SkillItemImageVariant
 import dev.datlag.homepage.components.sections.stack.style.SkillProficiencyTextStyle
 import dev.datlag.homepage.components.sections.stack.style.SkillTextStyle
 import dev.datlag.homepage.components.sections.stack.style.SkillsGridStyle
+import dev.datlag.homepage.model.Res
 import dev.datlag.homepage.model.Skill
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.H1
@@ -37,10 +40,15 @@ fun Stack() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        H1 {
-            Text("Tech Stack")
+        H1(
+            attrs = Modifier.textAlign(TextAlign.Center).toAttrs(),
+        ) {
+            Text(value = Res.strings.stackTitle)
         }
-        SpanText(text = "These are the technologies I have worked with and actively use or have used in the past.")
+        SpanText(
+            modifier = Modifier.textAlign(TextAlign.Center),
+            text = Res.strings.stackDescription
+        )
 
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -83,7 +91,8 @@ private fun SkillItem(
             attrs = ImageStyle.toModifier(SkillItemImageVariant).toAttrs {
                 attr("loading", "lazy")
                 attr("decoding", "async")
-            }
+            },
+            alt = skill.name
         )
         Column(
             modifier = Modifier.margin(left = 0.75.cssRem),
