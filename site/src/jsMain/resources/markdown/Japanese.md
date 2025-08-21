@@ -25,7 +25,7 @@ By integrating Tolgee, I make the tools more inclusive and adaptable, which alig
 
 ## My Learning Philosophy
 
-Learning Japanese is a long-term journey, and I approach it with a mix of structured practice and creative exploration. Tools like my slideshow game and name converter allow me to practice while also giving back to the community. I aim to build resources that are **practical, interactive, and accessible**, making Japanese learning more engaging and less intimidating.
+Learning Japanese is a long-term journey, and I approach it with a mix of structured practice and creative exploration. Tools like my name converter allow me to practice while also giving back to the community. I aim to build resources that are **practical, interactive, and accessible**, making Japanese learning more engaging and less intimidating.
 
 In the future, I plan to expand these projects by adding additional games, quizzes, and even collaborative features where learners can share their progress and challenge each other. By combining programming skills with language learning, I hope to contribute meaningful tools that support learners at every stage of their journey.
 
