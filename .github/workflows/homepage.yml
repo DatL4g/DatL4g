@@ -70,6 +70,11 @@ jobs:
         run: |
           cd site
           ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
+          cd -
+
+      - name: Generate Sitemap
+        continue-on-error: true
+        run: ./gradlew :site:generateSitemap
 
       # 6. Upload the built artifact to Pages
       - name: "📤 Upload GitHub Pages artifact"
