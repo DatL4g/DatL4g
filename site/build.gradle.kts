@@ -58,6 +58,14 @@ kobweb {
             head.add {
                 link(href = "./manifest.json", rel = "manifest")
             }
+            head.add {
+                val name = "yandex-verification" // Fix for gradle cache
+
+                meta(
+                    name = name,
+                    content = "e3ddb616d3fefa55"
+                )
+            }
             description.set("Jeff Retz - Professional Kotlin Multiplatform Developer")
         }
     }
