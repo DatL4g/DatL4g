@@ -66,6 +66,14 @@ kobweb {
                     content = "e3ddb616d3fefa55"
                 )
             }
+            head.add {
+                val name = "naver-site-verification" // Fix for gradle cache
+
+                meta(
+                    name = name,
+                    content = ""
+                )
+            }
             description.set("Jeff Retz - Professional Kotlin Multiplatform Developer")
         }
     }
