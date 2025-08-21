@@ -21,7 +21,7 @@ The converter also serves an educational purpose, allowing users to see the diff
 
 Since my tools are aimed at learners from different parts of the world, **localization** is an important consideration. I am exploring and actively working on [**Tolgee**](projects/Tolgee.md), a modern localization platform that simplifies translating and managing text in applications. With Tolgee, I can ensure that my apps are accessible to a wider audience, offering translations and guidance in multiple languages.
 
-For example, the Kanji Slideshow Game could display instructions in English, Spanish, or German, while still teaching Japanese characters. By integrating Tolgee, I make the tools more inclusive and adaptable, which aligns perfectly with my mission of helping as many learners as possible.
+By integrating Tolgee, I make the tools more inclusive and adaptable, which aligns perfectly with my mission of helping as many learners as possible.
 
 ## My Learning Philosophy
 
