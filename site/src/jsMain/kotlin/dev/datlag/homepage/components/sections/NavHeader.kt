@@ -111,6 +111,7 @@ private fun NavLink(path: String, text: String) {
 private fun MenuItems() {
     NavLink("/", "Home")
     NavLink("/projects", "Projects")
+    NavLink("/japanese", "Japanese")
     NavLink("/about", "About")
     NavLink("/contact", "Contact")
     NavLink("/legal", "Legal")

@@ -1,7 +1,8 @@
 [versions]
 compose = "1.8.0"
-kobweb = "0.23.0"
-kotlin = "2.2.0"
+kobweb = "0.23.1"
+kotlin = "2.2.10"
+tooling = "1.8.0"
 
 [libraries]
 kobweb-api = { module = "com.varabyte.kobweb:kobweb-api", version.ref = "kobweb" }
@@ -13,6 +14,7 @@ kobwebx-serialization-kotlinx = { module = "com.varabyte.kobwebx:kobwebx-seriali
 silk-foundation = { module = "com.varabyte.kobweb:silk-foundation", version.ref = "kobweb" }
 silk-icons-fa = { module = "com.varabyte.kobwebx:silk-icons-fa", version.ref = "kobweb" }
 silk-icons-mdi = { module = "com.varabyte.kobwebx:silk-icons-mdi", version.ref = "kobweb" }
+tooling-wanakana = { group = "dev.datlag.tooling", name = "tooling-wanakana", version.ref = "tooling" }
 
 [plugins]
 compose = { id = "org.jetbrains.compose", version.ref = "compose" }

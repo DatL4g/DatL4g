@@ -38,7 +38,7 @@ Mimasu supports an extension system so streaming providers can integrate **direc
 
 ## Screenshots
 
-{{{ .components.widgets.MimasuScreenshotSection }}}
+{{{ .components.widgets.projects.MimasuScreenshotSection }}}
 
 ## How Extensions Work (High-Level)
 

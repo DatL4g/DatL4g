@@ -1,4 +1,4 @@
-package dev.datlag.homepage.components.widgets
+package dev.datlag.homepage.components.widgets.projects
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.Overflow
