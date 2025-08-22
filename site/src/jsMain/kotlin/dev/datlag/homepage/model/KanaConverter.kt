@@ -159,6 +159,21 @@ data object KanaConverter {
                 continue
             }
 
+            if (raw.startsWith("tz", i)) {
+                val next = raw.getOrNull(i + 2)
+                if (next != null && next in vowels) {
+                    if (next == 'u') {
+                        append("ツ")
+                        i += 2
+                        continue
+                    }
+                } else {
+                    append("ツ")
+                    i += 2
+                    continue
+                }
+            }
+
             if (i + 1 < raw.length && raw[i] =='f' && raw[i + 1] == 'f') {
                 val next = i + 2
                 if (isVowelAt(raw, next)) {
