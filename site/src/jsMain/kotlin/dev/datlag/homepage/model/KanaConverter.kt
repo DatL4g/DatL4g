@@ -174,6 +174,18 @@ data object KanaConverter {
                 }
             }
 
+            if (raw[i] in vowels && i + 1 < raw.length && raw[i + 1] == 'h') {
+                val next = raw.getOrNull(i + 2)
+                if (next == null || next !in vowels) {
+                    dict[raw[i].toString()]?.let {
+                        append(it)
+                        append('ー')
+                        i += 2
+                        continue
+                    }
+                }
+            }
+
             if (i + 1 < raw.length && raw[i] =='f' && raw[i + 1] == 'f') {
                 val next = i + 2
                 if (isVowelAt(raw, next)) {
@@ -196,6 +208,13 @@ data object KanaConverter {
             }
 
             if (i + 1 < raw.length && raw[i] == raw[i + 1] && raw[i] !in vowels && raw[i] != 'n' && raw[i] != 'f') {
+                append("ッ")
+                i += 1
+                wordStart = false
+                continue
+            }
+
+            if (i + 1 < raw.length && (raw[i] == 'c' || raw[i] == 'k') &&(raw[i + 1] == 'c' || raw[i + 1] == 'k')) {
                 append("ッ")
                 i += 1
                 wordStart = false
