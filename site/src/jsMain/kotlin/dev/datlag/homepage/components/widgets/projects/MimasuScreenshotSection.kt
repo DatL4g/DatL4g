@@ -11,6 +11,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.overflow
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.navigation.BasePath
+import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.graphics.ImageDecoding
+import com.varabyte.kobweb.silk.components.graphics.ImageLoading
 import com.varabyte.kobweb.silk.components.graphics.ImageStyle
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.shapes.RectF
@@ -29,35 +32,32 @@ fun MimasuScreenshotSection() {
             .gap(16.px)
             .padding(bottom = 8.px)
     ) {
-        Img(
-            src = BasePath.prependTo("/mimasu_1.webp"),
+        Image(
+            src = "/mimasu_1.webp",
             alt = "Home",
-            attrs = ImageStyle.toModifier().clip(RectF(10.px)).toAttrs {
-                attr("loading", "lazy")
-                attr("decoding", "async")
-                attr("width", "350")
-                attr("height", "720")
-            }
+            modifier = Modifier.clip(RectF(10.px)),
+            loading = ImageLoading.Lazy,
+            decoding = ImageDecoding.Async,
+            width = 350,
+            height = 720
         )
-        Img(
-            src = BasePath.prependTo("/mimasu_2.webp"),
+        Image(
+            src = "/mimasu_2.webp",
             alt = "Series",
-            attrs = ImageStyle.toModifier().clip(RectF(10.px)).toAttrs {
-                attr("loading", "lazy")
-                attr("decoding", "async")
-                attr("width", "350")
-                attr("height", "720")
-            }
+            modifier = Modifier.clip(RectF(10.px)),
+            loading = ImageLoading.Lazy,
+            decoding = ImageDecoding.Async,
+            width = 350,
+            height = 720
         )
-        Img(
-            src = BasePath.prependTo("/mimasu_3.webp"),
+        Image(
+            src = "/mimasu_3.webp",
             alt = "Movie",
-            attrs = ImageStyle.toModifier().clip(RectF(10.px)).toAttrs {
-                attr("loading", "lazy")
-                attr("decoding", "async")
-                attr("width", "350")
-                attr("height", "720")
-            }
+            modifier = Modifier.clip(RectF(10.px)),
+            loading = ImageLoading.Lazy,
+            decoding = ImageDecoding.Async,
+            width = 350,
+            height = 720
         )
     }
 }

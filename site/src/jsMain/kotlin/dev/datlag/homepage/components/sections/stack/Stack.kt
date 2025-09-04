@@ -15,6 +15,8 @@ import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.navigation.BasePath
 import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.graphics.ImageDecoding
+import com.varabyte.kobweb.silk.components.graphics.ImageLoading
 import com.varabyte.kobweb.silk.components.graphics.ImageStyle
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
@@ -86,12 +88,11 @@ private fun SkillItem(
         horizontalArrangement = horizontal,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Img(
-            src = BasePath.prependTo(if (colorMode.isLight) skill.iconLight else skill.iconDark),
-            attrs = ImageStyle.toModifier(SkillItemImageVariant).toAttrs {
-                attr("loading", "lazy")
-                attr("decoding", "async")
-            },
+        Image(
+            src = if (colorMode.isLight) skill.iconLight else skill.iconDark,
+            variant = SkillItemImageVariant,
+            loading = ImageLoading.Lazy,
+            decoding = ImageDecoding.Async,
             alt = skill.name
         )
         Column(

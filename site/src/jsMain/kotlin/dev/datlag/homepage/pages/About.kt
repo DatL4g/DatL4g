@@ -31,6 +31,8 @@ import com.varabyte.kobweb.core.init.InitRouteContext
 import com.varabyte.kobweb.core.layout.Layout
 import com.varabyte.kobweb.framework.annotations.DelicateApi
 import com.varabyte.kobweb.silk.components.graphics.Image
+import com.varabyte.kobweb.silk.components.graphics.ImageDecoding
+import com.varabyte.kobweb.silk.components.graphics.ImageLoading
 import com.varabyte.kobweb.silk.components.icons.fa.FaGithub
 import com.varabyte.kobweb.silk.components.icons.fa.FaInstagram
 import com.varabyte.kobweb.silk.components.icons.fa.FaLinkedinIn
@@ -85,10 +87,9 @@ fun AboutPage() {
             Image(
                 src = Res.drawables.self,
                 description = Res.strings.name,
-                modifier = Modifier
-                    .clip(Rect(0, 20.px))
-                    .attr("loading", "lazy")
-                    .attr("decoding", "async"),
+                modifier = Modifier.clip(Rect(0, 20.px)),
+                loading = ImageLoading.Lazy,
+                decoding = ImageDecoding.Async,
                 height = 384,
                 width = 288
             )

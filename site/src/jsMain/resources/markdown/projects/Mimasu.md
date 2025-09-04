@@ -48,6 +48,8 @@ Mimasu supports an extension system so streaming providers can integrate **direc
 
 This architecture keeps providers in control of their content and policies while giving users a unified, polished browsing experience.
 
+Want to build your own? Sure [read about it here](mimasu/Building.md).
+
 ## Privacy & Data Safety
 
 On Google Play, the listing declares:  
